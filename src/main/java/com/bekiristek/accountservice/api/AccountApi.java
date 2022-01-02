@@ -16,24 +16,22 @@ public class AccountApi {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Account> get(@PathVariable("id") String id) {
+    public ResponseEntity<Account> get(@PathVariable("id") Long id) {
         return ResponseEntity.ok(accountService.get(id));
     }
 
     @PostMapping
     public ResponseEntity<Account> save(@RequestBody Account account) {
-        return null;
+        return ResponseEntity.ok(accountService.save(account));
     }
 
-    public ResponseEntity<Account> delete(String id) {
-        return null;
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> delete(@PathVariable("id") Long id) {
+        return ResponseEntity.ok(accountService.delete(id));
     }
 
+    @PutMapping
     public ResponseEntity<Account> update(Account account) {
-        return null;
-    }
-
-    public ResponseEntity<Account> pagination() {
-        return null;
+        return ResponseEntity.ok(accountService.update(account));
     }
 }

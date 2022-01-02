@@ -1,30 +1,39 @@
 package com.bekiristek.accountservice.entity;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "accounts")
 public class Account {
-    private String id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+    @Column
     private String username;
+    @Column
     private String email;
+    @Column
     private String password;
 
     public Account() {
     }
 
-    public Account(String id) {
+    public Account(Long id) {
         this.id = id;
     }
 
-    public Account(String id, String username, String email, String password) {
+    public Account(Long id, String username, String email, String password) {
         this.id = id;
         this.username = username;
         this.email = email;
         this.password = password;
     }
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
