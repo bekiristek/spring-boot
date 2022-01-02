@@ -20,7 +20,8 @@ public class AccountApi {
         return ResponseEntity.ok(accountService.get(id));
     }
 
-    public ResponseEntity<Account> save( Account account) {
+    @PostMapping
+    public ResponseEntity<Account> save(@RequestBody Account account) {
         return null;
     }
 
