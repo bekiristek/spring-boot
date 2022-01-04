@@ -30,7 +30,12 @@ public class AccountService {
     }
 
     public Account update(Account account) {
-        return null;
+        Account newAccount = accountRepository.findById(account.getId());
+        newAccount.setUsername(account.getUsername());
+        newAccount.setPassword(account.getPassword());
+        newAccount.setEmail(account.getEmail());
+        return accountRepository.save(newAccount);
+
     }
 
     public Account pagination() {

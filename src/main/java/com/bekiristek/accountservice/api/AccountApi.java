@@ -31,7 +31,7 @@ public class AccountApi {
     }
 
     @PutMapping
-    public ResponseEntity<Account> update(Account account) {
+    public ResponseEntity<Account> update(@RequestBody Account account) {
         return ResponseEntity.ok(accountService.update(account));
     }
 }
